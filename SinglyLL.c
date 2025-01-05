@@ -68,6 +68,23 @@ Node* deleteEnd(){
     }
 }
 
+void search(int num){
+    int flag = 0;
+    Node *temp=head;
+    while(temp!=NULL){
+        if(temp->data==num){
+            flag = 1;
+            break;
+        }     
+        temp=temp->next;
+    }
+    if(flag){
+        printf("Data Found!");
+    }else{
+        printf("Not Found!");
+    }
+}
+
 void display(){
     Node *temp = head;
     if(head==NULL)
@@ -81,7 +98,7 @@ void display(){
 }
 
 int main(){
-    int ch,n;
+    int ch,n,num;
     Node *temp;
     printf("\n1.Insert from start : ");
     printf("\n2.Insert by position : ");
@@ -132,6 +149,9 @@ int main(){
             break;
 
             case 8:
+                printf("Enter data to search : ");
+                scanf("%d",&num);
+                search(num);
             break;
 
 
