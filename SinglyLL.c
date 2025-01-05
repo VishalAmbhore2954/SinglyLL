@@ -57,6 +57,17 @@ void deleteStart(){
     }
 }
 
+Node* deleteEnd(){
+    Node *temp = head;
+    if(head==NULL)
+        printf("No node present to display\n");
+    else{
+        while(temp->next->next!=NULL)
+            temp=temp->next;
+        temp->next=NULL;
+    }
+}
+
 void display(){
     Node *temp = head;
     if(head==NULL)
@@ -108,20 +119,30 @@ int main(){
             case 4:
                 deleteStart();
             break;
+
             case 5:
+                
             break;
+
             case 6:
             break;
+
             case 7:
+                deleteEnd();
             break;
+
             case 8:
             break;
+
+
             case 9:
                 display();
             break;
+
             case 10:
                 exit(0);
             break;
+
             default:
                 printf("Invalid Choice!");
         }
