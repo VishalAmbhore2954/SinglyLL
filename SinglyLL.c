@@ -24,10 +24,22 @@ void insertStart(Node *temp){
     }
 }
 
+void insertEnd(Node *temp){
+    if(head==NULL){
+        head=temp;
+    }else{
+        Node *t1 = head;
+        while(t1->next!=NULL)
+            t1=t1->next;
+        t1->next=temp;
+    }
+}
+
 void display(){
-    while(head!=NULL){
-        printf("%d ",head->data);
-        head=head->next;
+    Node *temp = head;
+    while(temp!=NULL){
+        printf("%d ",temp->data);
+        temp=temp->next;
     }
 }
 
@@ -54,10 +66,15 @@ int main(){
                 temp = create();
                 insertStart(temp);
             break;
+
             case 2:
             break;
+
             case 3:
+                temp=create();
+                insertEnd(temp);
             break;
+            
             case 4:
             break;
             case 5:
