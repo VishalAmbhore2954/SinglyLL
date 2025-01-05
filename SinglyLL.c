@@ -24,6 +24,20 @@ void insertStart(Node *temp){
     }
 }
 
+void insertbyPos(Node *temp,int n){
+    int i;
+    Node *t1=head;
+    if(head==NULL){
+        head=temp;
+    }else{
+        for(i=2;i<n;i++){
+            t1 = t1->next;
+        }
+        temp->next=t1->next;
+        t1->next=temp;
+    }
+}
+
 void insertEnd(Node *temp){
     if(head==NULL){
         head=temp;
@@ -44,7 +58,7 @@ void display(){
 }
 
 int main(){
-    int ch;
+    int ch,n;
     Node *temp;
     printf("\n1.Insert from start : ");
     printf("\n2.Insert by position : ");
@@ -68,6 +82,10 @@ int main(){
             break;
 
             case 2:
+                temp=create();
+                printf("Enter a position : ");
+                scanf("%d",&n);
+                insertbyPos(temp,n);
             break;
 
             case 3:
