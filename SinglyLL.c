@@ -11,7 +11,17 @@ Node *create(){
     node = (Node*)malloc(sizeof(Node));
     printf("Enter a data : ");
     scanf("%d",&node->data);
+    node->next=NULL;
     return node;
+}
+Node *head=NULL;
+void insertStart(Node *temp){
+    if(head==NULL)
+        head=temp;
+    else{
+        temp->next=head;
+        head=temp;
+    }
 }
 
 int main(){
@@ -34,7 +44,9 @@ int main(){
 
         switch(ch){
             case 1:
-
+                Node *temp;
+                temp = create();
+                insertStart(temp);
             break;
             case 2:
             break;
