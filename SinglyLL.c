@@ -3,7 +3,7 @@
 
 typedef struct Node{
     int data;
-    Node *next;
+    struct Node *next;
 }Node;
 
 Node *create(){
@@ -24,9 +24,16 @@ void insertStart(Node *temp){
     }
 }
 
+void display(){
+    while(head!=NULL){
+        printf("%d ",head->data);
+        head=head->next;
+    }
+}
+
 int main(){
     int ch;
-
+    Node *temp;
     printf("\n1.Insert from start : ");
     printf("\n2.Insert by position : ");
     printf("\n3.Insert from end : ");
@@ -44,7 +51,6 @@ int main(){
 
         switch(ch){
             case 1:
-                Node *temp;
                 temp = create();
                 insertStart(temp);
             break;
@@ -63,6 +69,7 @@ int main(){
             case 8:
             break;
             case 9:
+                display();
             break;
             case 10:
                 exit(0);
