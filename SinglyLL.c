@@ -59,9 +59,13 @@ void deleteStart(){
 
 void display(){
     Node *temp = head;
-    while(temp!=NULL){
-        printf("%d ",temp->data);
-        temp=temp->next;
+    if(head==NULL)
+        printf("No node present to display\n");
+    else{
+        while(temp!=NULL){
+            printf("%d ",temp->data);
+            temp=temp->next;
+        }
     }
 }
 
