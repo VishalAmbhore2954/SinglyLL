@@ -49,6 +49,14 @@ void insertEnd(Node *temp){
     }
 }
 
+void deleteStart(){
+    if(head==NULL)
+        printf("No node present in list\n");
+    else{
+        head=head->next;
+    }
+}
+
 void display(){
     Node *temp = head;
     while(temp!=NULL){
@@ -94,6 +102,7 @@ int main(){
             break;
             
             case 4:
+                deleteStart();
             break;
             case 5:
             break;
