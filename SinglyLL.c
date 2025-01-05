@@ -1,5 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+typedef struct Node{
+    int data;
+    Node *next;
+}Node;
+
+Node *create(){
+    Node *node;
+    node = (Node*)malloc(sizeof(Node));
+    printf("Enter a data : ");
+    scanf("%d",&node->data);
+    return node;
+}
+
 int main(){
     int ch;
 
